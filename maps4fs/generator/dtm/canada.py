@@ -15,7 +15,8 @@ class CanadaProvider(WCSProvider, DTMProvider):
     _author = "[kbrandwijk](https://github.com/kbrandwijk)"
     _is_community = True
     _is_base = False
-    _extents = [(76.49491845750764, 33.66564101989275, -26.69697497450798, -157.7322455868316)]
+    _extents_identifier = "Canada"
+
     _instructions = (
         "HRDEM coverage for Canada is limited. Make sure to check the "
         "[coverage map](https://geo.ca/imagery/high-resolution-digital"

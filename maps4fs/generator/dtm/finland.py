@@ -24,7 +24,7 @@ class FinlandProvider(WCSProvider, DTMProvider):
     _author = "[kbrandwijk](https://github.com/kbrandwijk)"
     _is_community = True
     _is_base = False
-    _extents = [(70.09, 59.45, 31.59, 19.08)]
+    _extents_identifier = "Finland"
 
     _url = "https://avoin-karttakuva.maanmittauslaitos.fi/ortokuvat-ja-korkeusmallit/wcs/v2"
     _wcs_version = "2.0.1"

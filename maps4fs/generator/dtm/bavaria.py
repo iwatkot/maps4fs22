@@ -23,7 +23,7 @@ class BavariaProvider(DTMProvider):
     _author = "[H4rdB4se](https://github.com/H4rdB4se)"
     _is_community = True
     _instructions = None
-    _extents = [(50.56, 47.25, 13.91, 8.95)]
+    _extents_identifier = "Bayern"
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

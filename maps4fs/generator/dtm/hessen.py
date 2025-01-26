@@ -15,7 +15,7 @@ class HessenProvider(WCSProvider, DTMProvider):
     _author = "[kbrandwijk](https://github.com/kbrandwijk)"
     _is_community = True
     _is_base = False
-    _extents = [(51.66698, 49.38533, 10.25780, 7.72773)]
+    _extents_identifier = "Hessen"
 
     _url = "https://inspire-hessen.de/raster/dgm1/ows"
     _wcs_version = "2.0.1"

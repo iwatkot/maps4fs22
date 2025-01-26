@@ -18,7 +18,7 @@ class ArcticProvider(DTMProvider):
     _author = "[kbrandwijk](https://github.com/kbrandwijk)"
     _is_community = True
 
-    _extents = [(83.98823036056658, 50.7492704708152, 179.99698443265999, -180)]
+    _extents_identifier = "Arctic"
 
     _instructions = (
         "This provider source includes 2 meter DEM data for the entire Arctic region above 50 "

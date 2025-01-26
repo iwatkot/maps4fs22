@@ -19,18 +19,8 @@ class FranceProvider(DTMProvider):
 
     _url = "https://data.cquest.org/ign/rgealti/repack/cog/RGEALTI_2-0_1M_COG_LAMB93-IGN69_FXX.vrt"
     _is_base = False
-    # no extents, because it also has a few colonies throughout the world
-    _extents = [
-        (51.2, 41.333, 9.55, -5.225),  # France
-        (8.6038842, 1.1710017, -61.414905, -56.4689543),  # Guyana
-        (16.5144664, 15.8320085, -61.809764, -61.0003663),  # Guadeloupe
-        (14.8787029, 14.3948596, -61.2290815, -60.8095833),  # Martinique
-        (-12.6365902, -13.0210119, 45.0183298, 45.2999917),  # Mayotte
-        (-20.8717136, -21.3897308, 55.2164268, 55.8366924),  # Reunion
-        (18.1375569, 17.670931, -63.06639, -62.5844019),  # Saint Barthelemy
-        (18.1902778, 17.8963535, -63.3605643, -62.7644063),  # Saint Martin
-        (47.365, 46.5507173, -56.6972961, -55.9033333),  # Saint Pierre and Miquelon
-    ]
+
+    _extents_identifier = "France"
 
     def download_tiles(self) -> list[str]:
         with rasterio.open(

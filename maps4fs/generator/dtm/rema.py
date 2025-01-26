@@ -18,7 +18,7 @@ class REMAProvider(DTMProvider):
     _author = "[kbrandwijk](https://github.com/kbrandwijk)"
     _is_community = True
 
-    _extents = [(-53.5443873459092, -53.5443873459092, 179.99698443265999, -180)]
+    _extents_identifier = "Antarctica"
 
     _instructions = (
         "This provider source includes 2 meter DEM data for the entire Antarctic region below 53 "

@@ -18,7 +18,7 @@ class ItalyProvider(WCSProvider, DTMProvider):
     _is_community = True
     _instructions = None
     _is_base = False
-    _extents = [(47.15570815704503, 35.177652867276855, 19.720144130809693, 6.527697471770745)]
+    _extents_identifier = "Italy"
 
     _url = "http://tinitaly.pi.ingv.it/TINItaly_1_1/wcs"
     _wcs_version = "2.0.1"

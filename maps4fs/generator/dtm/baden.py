@@ -16,7 +16,7 @@ class BadenWurttembergProvider(WCSProvider, DTMProvider):
     _is_community = True
     _instructions = None
     _is_base = False
-    _extents = [(49.79645444804715, 47.52877040346605, 10.54203149250156, 7.444081717803481)]
+    _extents_identifier = "Baden-Württemberg"
 
     _url = "https://owsproxy.lgl-bw.de/owsproxy/wcs/WCS_INSP_BW_Hoehe_Coverage_DGM1"
     _wcs_version = "2.0.1"

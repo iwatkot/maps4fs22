@@ -21,6 +21,8 @@ class SRTM30Provider(DTMProvider):
     _icon = "🌎"
     _resolution = 30.0
 
+    _extents_identifier = "SRTM"
+
     _url = "https://elevation-tiles-prod.s3.amazonaws.com/skadi/{latitude_band}/{tile_name}.hgt.gz"
 
     _author = "[iwatkot](https://github.com/iwatkot)"

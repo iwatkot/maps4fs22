@@ -64,7 +64,9 @@ class MainSettings(BaseComponent):
         except ValueError:
             lat, lon = config.DEFAULT_LAT, config.DEFAULT_LON
 
-        providers: dict[str, str] = mfs.DTMProvider.get_valid_provider_descriptions((lat, lon))
+        providers: dict[str, str] = mfs.DTMProvider.get_valid_provider_descriptions(
+            (lat, lon), self.map_size_input  # type: ignore
+        )
 
         st.write("Select the DTM provider:")
         self.dtm_provider_code = st.selectbox(

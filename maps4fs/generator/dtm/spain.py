@@ -15,9 +15,8 @@ class SpainProvider(WCSProvider, DTMProvider):
     _author = "[kbrandwijk](https://github.com/kbrandwijk)"
     _is_community = True
     _is_base = False
-    _extents = [
-        (43.9299999999999997, 27.6299999999999990, 4.9400000000000004, -18.2100000000000009)
-    ]
+
+    _extents_identifier = "Spain"
 
     _url = "https://servicios.idee.es/wcs-inspire/mdt"
     _wcs_version = "2.0.1"

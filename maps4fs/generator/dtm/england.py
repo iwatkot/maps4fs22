@@ -16,7 +16,7 @@ class England1MProvider(WCSProvider, DTMProvider):
     _is_community = True
     _instructions = None
     _is_base = False
-    _extents = [(55.87708724246775, 49.85060473351981, 2.0842821419111135, -7.104775741839742)]
+    _extents_identifier = "England"
 
     _url = "https://environment.data.gov.uk/geoservices/datasets/13787b9a-26a4-4775-8523-806d13af58fc/wcs"  # pylint: disable=line-too-long
     _wcs_version = "2.0.1"

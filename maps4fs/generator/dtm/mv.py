@@ -27,7 +27,7 @@ class MecklenburgVorpommernProvider(WCSProvider, DTMProvider):
     _instructions = None
     _is_base = False
     _settings = MecklenburgVorpommernProviderSettings
-    _extents = [(54.8, 53, 14.5, 10.5)]
+    _extents_identifier = "Mecklenburg-Vorpommern"
 
     _url = "https://www.geodaten-mv.de/dienste/dgm_wcs"
     _wcs_version = "2.0.1"

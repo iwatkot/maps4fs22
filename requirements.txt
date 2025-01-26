@@ -17,3 +17,4 @@ tqdm
 scipy
 schedule
 streamlit-folium
+geopandas

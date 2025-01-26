@@ -9,6 +9,8 @@ from abc import ABC, abstractmethod
 from typing import TYPE_CHECKING, Type
 from zipfile import ZipFile
 
+import geopandas
+from geopandas import GeoDataFrame
 import numpy as np
 import osmnx as ox
 import rasterio
@@ -17,6 +19,7 @@ from pydantic import BaseModel
 from rasterio.enums import Resampling
 from rasterio.merge import merge
 from rasterio.warp import calculate_default_transform, reproject
+import shapely
 from tqdm import tqdm
 
 from maps4fs.logger import Logger
@@ -46,8 +49,9 @@ class DTMProvider(ABC):
     _is_base: bool = False
     _settings: Type[DTMProviderSettings] | None = DTMProviderSettings
 
-    """Bounding box of the provider in the format (north, south, east, west)."""
     _extents: list[tuple[float, float, float, float]] | None = None
+    """Name of the entry in the shapes dataset that corresponds to the provider."""
+    _extents_identifier: str | None = None
 
     _instructions: str | None = None
 
@@ -249,36 +253,53 @@ class DTMProvider(ABC):
         return None
 
     @classmethod
-    def get_valid_provider_descriptions(cls, lat_lon: tuple[float, float]) -> dict[str, str]:
+    def get_valid_provider_descriptions(
+        cls, lat_lon: tuple[float, float], size: int
+    ) -> dict[str, str]:
         """Get descriptions of all providers, where keys are provider codes and
         values are provider descriptions.
 
         Returns:
             dict: Provider descriptions.
         """
-        providers: dict[str, str] = {}
+
+        df = geopandas.read_file(os.path.join(os.getcwd(), "maps4fs/generator/dtm/extents.shz"))
+
+        providers = {}
         for provider in cls.__subclasses__():
-            if not provider.is_base() and provider.inside_bounding_box(lat_lon):
-                code = provider.code()
-                if code is not None:
-                    providers[code] = provider.description()
-        return providers
+            # pylint: disable=W0212
+            if not provider._is_base and provider.inside_bounding_box(df, lat_lon, size):
+                providers[provider._code] = provider.description()  # pylint: disable=W0212
+        return providers  # type: ignore
 
     @classmethod
-    def inside_bounding_box(cls, lat_lon: tuple[float, float]) -> bool:
+    def inside_bounding_box(
+        cls, extents: GeoDataFrame, lat_lon: tuple[float, float], size: int
+    ) -> bool:
         """Check if the coordinates are inside the bounding box of the provider.
 
         Returns:
             bool: True if the coordinates are inside the bounding box, False otherwise.
         """
         lat, lon = lat_lon
-        extents = cls._extents
-        if extents is None:
+        bbox = ox.utils_geo.bbox_from_point((lat, lon), dist=size // 2, project_utm=False)
+        box = shapely.geometry.box(*bbox)
+
+        provider_extents = extents[extents["name"] == cls._extents_identifier]
+
+        if provider_extents.empty:
+            if cls._extents is not None:
+                for extent in cls._extents:
+                    north, south, east, west = extent
+                    geom = shapely.geometry.box(west, south, east, north)
+                    if geom.contains_properly(box):
+                        return True
+                return False
             return True
-        for extent in extents:
-            if extent[0] >= lat >= extent[1] and extent[2] >= lon >= extent[3]:
-                return True
-        return False
+
+        geom = provider_extents["geometry"]
+        is_inside = geom.contains_properly(box).any()
+        return is_inside
 
     @abstractmethod
     def download_tiles(self) -> list[str]:
@@ -341,6 +362,7 @@ class DTMProvider(ABC):
             self.coordinates, dist=self.size // 2, project_utm=False
         )
         bbox = float(north), float(south), float(east), float(west)
+
         return bbox
 
     def download_tif_files(self, urls: list[str], output_path: str) -> list[str]:

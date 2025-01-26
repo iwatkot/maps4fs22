@@ -27,7 +27,7 @@ class SwitzerlandProvider(DTMProvider):
     _author = "[kbrandwijk](https://github.com/kbrandwijk)"
     _is_community = True
 
-    _extents = [(47.8308275417, 45.7769477403, 10.4427014502, 6.02260949059)]
+    _extents_identifier = "Switzerland"
 
     _url = (
         "https://ogd.swisstopo.admin.ch/services/swiseld/"

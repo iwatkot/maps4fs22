@@ -20,7 +20,7 @@ class NiedersachsenProvider(WMSProvider, DTMProvider):
         "to smooth the data."
     )
     _is_base = False
-    _extents = [(54.148101, 51.153098, 11.754046, 6.505772)]
+    _extents_identifier = "Niedersachsen"
 
     _url = "https://opendata.lgln.niedersachsen.de/doorman/noauth/dgm_wms"
     _source_crs = "EPSG:25832"

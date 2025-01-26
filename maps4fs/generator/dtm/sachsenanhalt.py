@@ -15,9 +15,8 @@ class SachsenAnhaltProvider(WCSProvider, DTMProvider):
     _author = "[kbrandwijk](https://github.com/kbrandwijk)"
     _is_community = True
     _is_base = False
-    _extents = [
-        (53.0769416826493412, 50.8927195980075453, 13.3232545527125836, 10.5092298520646867)
-    ]
+
+    _extents_identifier = "Sachsen-Anhalt"
 
     _url = "https://www.geodatenportal.sachsen-anhalt.de/wss/service/ST_LVermGeo_DGM1_WCS_OpenData/guest"  # pylint: disable=line-too-long
     _wcs_version = "1.0.0"

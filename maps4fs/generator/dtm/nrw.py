@@ -15,7 +15,7 @@ class NRWProvider(WCSProvider, DTMProvider):
     _author = "[kbrandwijk](https://github.com/kbrandwijk)"
     _is_community = True
     _is_base = False
-    _extents = [(52.6008271, 50.1506045, 9.5315425, 5.8923538)]
+    _extents_identifier = "Nordrhein-Westfalen"
 
     _url = "https://www.wcs.nrw.de/geobasis/wcs_nw_dgm"
     _wcs_version = "2.0.1"

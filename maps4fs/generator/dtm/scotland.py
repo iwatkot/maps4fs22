@@ -58,9 +58,8 @@ class ScotlandProvider(DTMProvider):
         "Coverage for Scotland is very limited. "
         "Make sure to check the [coverage map](https://remotesensingdata.gov.scot/data#/map)."
     )
-    _extents = [
-        (60.2151105070992756, 54.5525982243521881, -1.1045617513147328, -6.7070796770431951)
-    ]
+
+    _extents_identifier = "Scotland"
 
     _url = "https://srsp-catalog.jncc.gov.uk/search/product"
 
