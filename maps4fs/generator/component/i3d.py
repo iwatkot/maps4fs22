@@ -430,80 +430,118 @@ class I3d(XMLComponent):
 
         return tree_schema  # type: ignore
 
+    def _get_random_tree(
+        self, tree_schema: list[dict[str, str]], leaf_type: str | None = None
+    ) -> dict[str, str]:
+        """Gets a random tree from the tree schema.
+        If the leaf type is provided, the method tries to get a tree with the same leaf type.
+
+        Arguments:
+            tree_schema (list[dict[str, str]]): The tree schema.
+            leaf_type (str, optional): The leaf type of the tree. Defaults to None.
+
+        Returns:
+            dict[str, str]: The random tree from the schema
+        """
+        if not leaf_type:
+            return choice(tree_schema)
+
+        try:
+            leaf_type = leaf_type.split("_")[0]
+        except IndexError:
+            return choice(tree_schema)
+
+        if leaf_type == "mixed":
+            trees_with_leaf_type = [tree for tree in tree_schema if tree.get("leaf_type")]
+            return choice(trees_with_leaf_type)
+
+        trees_by_leaf_type = [tree for tree in tree_schema if tree.get("leaf_type") == leaf_type]
+        if not trees_by_leaf_type:
+            return choice(tree_schema)
+
+        return choice(trees_by_leaf_type)
+
     def _add_forests(self) -> None:
         """Adds forests to the map I3D file."""
         tree_schema = self._read_tree_schema()
         if not tree_schema:
             return
 
-        forest_layer = self.map.get_texture_layer(by_usage=Parameters.FOREST)
-        if not forest_layer:
+        if self.map.texture_settings.use_precise_tags:
+            forest_layers = self.map.get_texture_layers(by_usage=Parameters.FOREST)
+        else:
+            layer = self.map.get_texture_layer(by_usage=Parameters.FOREST)
+            forest_layers = [layer] if layer else []
+        if not forest_layers:
             self.logger.warning("Forest layer not found.")
-            return
-
-        weights_directory = self.game.weights_dir_path(self.map_directory)
-        forest_image_path = forest_layer.get_preview_or_path(weights_directory)
-
-        if not forest_image_path or not os.path.isfile(forest_image_path):
-            self.logger.warning("Forest image not found.")
-            return
-
-        tree = self.get_tree()
-        root = tree.getroot()
-        scene_node = root.find(".//Scene")
-        if scene_node is None:
-            self.logger.warning("Scene element not found in I3D file.")
             return
 
         node_id = TREE_NODE_ID_STARTING_VALUE
 
-        trees_node = self.create_element(
-            "TransformGroup",
-            {
-                "name": "trees",
-                "translation": "0 0 0",
-                "nodeId": str(node_id),
-            },
-        )
-        node_id += 1
+        for forest_layer in forest_layers:
+            weights_directory = self.game.weights_dir_path(self.map_directory)
+            forest_image_path = forest_layer.get_preview_or_path(weights_directory)
 
-        not_resized_dem = self.get_not_resized_dem()
-        if not_resized_dem is None:
-            self.logger.warning("Not resized DEM not found.")
-            return
+            if not forest_image_path or not os.path.isfile(forest_image_path):
+                self.logger.warning("Forest image not found.")
+                continue
 
-        forest_image = cv2.imread(forest_image_path, cv2.IMREAD_UNCHANGED)
-        for x, y in self.non_empty_pixels(forest_image, step=self.map.i3d_settings.forest_density):
-            shifted_x, shifted_y = self.randomize_coordinates(
-                (x, y),
-                self.map.i3d_settings.forest_density,
-                self.map.i3d_settings.trees_relative_shift,
+            tree = self.get_tree()
+            root = tree.getroot()
+            scene_node = root.find(".//Scene")
+            if scene_node is None:
+                self.logger.warning("Scene element not found in I3D file.")
+                return
+
+            trees_node = self.create_element(
+                "TransformGroup",
+                {
+                    "name": "trees",
+                    "translation": "0 0 0",
+                    "nodeId": str(node_id),
+                },
             )
-
-            shifted_x, shifted_y = int(shifted_x), int(shifted_y)
-
-            z = self.get_z_coordinate_from_dem(not_resized_dem, shifted_x, shifted_y)
-
-            xcs, ycs = self.top_left_coordinates_to_center((shifted_x, shifted_y))
             node_id += 1
 
-            rotation = randint(-180, 180)
+            not_resized_dem = self.get_not_resized_dem()
+            if not_resized_dem is None:
+                self.logger.warning("Not resized DEM not found.")
+                return
 
-            random_tree = choice(tree_schema)
-            tree_name = random_tree["name"]
-            tree_id = random_tree["reference_id"]
+            forest_image = cv2.imread(forest_image_path, cv2.IMREAD_UNCHANGED)
+            for x, y in self.non_empty_pixels(
+                forest_image, step=self.map.i3d_settings.forest_density
+            ):
+                shifted_x, shifted_y = self.randomize_coordinates(
+                    (x, y),
+                    self.map.i3d_settings.forest_density,
+                    self.map.i3d_settings.trees_relative_shift,
+                )
 
-            data = {
-                "name": tree_name,
-                "translation": f"{xcs} {z} {ycs}",
-                "rotation": f"0 {rotation} 0",
-                "referenceId": str(tree_id),
-                "nodeId": str(node_id),
-            }
-            trees_node.append(self.create_element("ReferenceNode", data))
+                shifted_x, shifted_y = int(shifted_x), int(shifted_y)
 
-        scene_node.append(trees_node)
-        self.save_tree(tree)
+                z = self.get_z_coordinate_from_dem(not_resized_dem, shifted_x, shifted_y)
+
+                xcs, ycs = self.top_left_coordinates_to_center((shifted_x, shifted_y))
+                node_id += 1
+
+                rotation = randint(-180, 180)
+
+                random_tree = self._get_random_tree(tree_schema, forest_layer.precise_usage)
+                tree_name = random_tree["name"]
+                tree_id = random_tree["reference_id"]
+
+                data = {
+                    "name": tree_name,
+                    "translation": f"{xcs} {z} {ycs}",
+                    "rotation": f"0 {rotation} 0",
+                    "referenceId": str(tree_id),
+                    "nodeId": str(node_id),
+                }
+                trees_node.append(self.create_element("ReferenceNode", data))
+
+            scene_node.append(trees_node)
+            self.save_tree(tree)
 
     @staticmethod
     def randomize_coordinates(

@@ -206,6 +206,7 @@ class TextureSettings(SettingsModel):
     fields_padding: int = 0
     skip_drains: bool = False
     use_cache: bool = True
+    use_precise_tags: bool = False
 
 
 class SplineSettings(SettingsModel):

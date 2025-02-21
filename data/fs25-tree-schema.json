@@ -1,151 +1,188 @@
 [
   {
     "name": "americanElm_stage01",
-    "reference_id": 1001
+    "reference_id": 1001,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "americanElm_stage02",
-    "reference_id": 1002
+    "reference_id": 1002,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "americanElm_stage03",
-    "reference_id": 1003
+    "reference_id": 1003,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "americanElm_stage04",
-    "reference_id": 1004
+    "reference_id": 1004,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "americanElm_stage05",
-    "reference_id": 1005
+    "reference_id": 1005,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "apple_stage03",
-    "reference_id": 1006
+    "reference_id": 1006,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "aspen_stage01",
-    "reference_id": 1007
+    "reference_id": 1007,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "aspen_stage02",
-    "reference_id": 1008
+    "reference_id": 1008,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "aspen_stage03",
-    "reference_id": 1009
+    "reference_id": 1009,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "aspen_stage04",
-    "reference_id": 1010
+    "reference_id": 1010,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "aspen_stage05",
-    "reference_id": 1011
+    "reference_id": 1011,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "aspen_stage06_var01",
-    "reference_id": 1012
+    "reference_id": 1012,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "aspen_stage06_var02",
-    "reference_id": 1013
+    "reference_id": 1013,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "beech_stage01",
-    "reference_id": 1014
+    "reference_id": 1014,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "beech_stage02",
-    "reference_id": 1015
+    "reference_id": 1015,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "beech_stage02_var02",
-    "reference_id": 1016
+    "reference_id": 1016,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "beech_stage02_var03",
-    "reference_id": 1017
+    "reference_id": 1017,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "beech_stage03",
-    "reference_id": 1018
+    "reference_id": 1018,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "beech_stage04",
-    "reference_id": 1019
+    "reference_id": 1019,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "beech_stage05",
-    "reference_id": 1020
+    "reference_id": 1020,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "beech_stage06_var01",
-    "reference_id": 1021
+    "reference_id": 1021,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "beech_stage06_var02",
-    "reference_id": 1022
+    "reference_id": 1022,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "betulaErmanii_stage01",
-    "reference_id": 1023
+    "reference_id": 1023,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "betulaErmanii_stage02",
-    "reference_id": 1024
+    "reference_id": 1024,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "betulaErmanii_stage03",
-    "reference_id": 1025
+    "reference_id": 1025,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "betulaErmanii_stage04",
-    "reference_id": 1026
+    "reference_id": 1026,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "boxelder_stage01",
-    "reference_id": 1027
+    "reference_id": 1027,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "boxelder_stage02",
-    "reference_id": 1028
+    "reference_id": 1028,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "boxelder_stage03",
-    "reference_id": 1029
+    "reference_id": 1029,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "cherry_stage01",
-    "reference_id": 1030
+    "reference_id": 1030,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "cherry_stage02",
-    "reference_id": 1031
+    "reference_id": 1031,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "cherry_stage03",
-    "reference_id": 1032
+    "reference_id": 1032,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "cherry_stage04",
-    "reference_id": 1033
+    "reference_id": 1033,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "chineseElm_stage01",
-    "reference_id": 1034
+    "reference_id": 1034,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "chineseElm_stage02",
-    "reference_id": 1035
+    "reference_id": 1035,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "chineseElm_stage03",
-    "reference_id": 1036
+    "reference_id": 1036,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "chineseElm_stage04",
-    "reference_id": 1037
+    "reference_id": 1037,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "deadwood",
@@ -153,175 +190,218 @@
   },
   {
     "name": "downyServiceBerry_stage01",
-    "reference_id": 1039
+    "reference_id": 1039,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "downyServiceBerry_stage02",
-    "reference_id": 1040
+    "reference_id": 1040,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "downyServiceBerry_stage03",
-    "reference_id": 1041
+    "reference_id": 1041,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "goldenRain_stage01",
-    "reference_id": 1042
+    "reference_id": 1042,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "goldenRain_stage02",
-    "reference_id": 1043
+    "reference_id": 1043,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "goldenRain_stage03",
-    "reference_id": 1044
+    "reference_id": 1044,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "goldenRain_stage04",
-    "reference_id": 1045
+    "reference_id": 1045,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "japaneseZelkova_stage01",
-    "reference_id": 1046
+    "reference_id": 1046,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "japaneseZelkova_stage02",
-    "reference_id": 1047
+    "reference_id": 1047,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "japaneseZelkova_stage03",
-    "reference_id": 1048
+    "reference_id": 1048,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "japaneseZelkova_stage04",
-    "reference_id": 1049
+    "reference_id": 1049,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "lodgepolePine_stage01",
-    "reference_id": 1050
+    "reference_id": 1050,
+    "leaf_type": "needleleaved"
   },
   {
     "name": "lodgepolePine_stage02",
-    "reference_id": 1051
+    "reference_id": 1051,
+    "leaf_type": "needleleaved"
   },
   {
     "name": "lodgepolePine_stage02Var2",
-    "reference_id": 1052
+    "reference_id": 1052,
+    "leaf_type": "needleleaved"
   },
   {
     "name": "lodgepolePine_stage03",
-    "reference_id": 1053
+    "reference_id": 1053,
+    "leaf_type": "needleleaved"
   },
   {
     "name": "lodgepolePine_stage03Var2",
-    "reference_id": 1054
+    "reference_id": 1054,
+    "leaf_type": "needleleaved"
   },
   {
     "name": "northernCatalpa_stage01",
-    "reference_id": 1055
+    "reference_id": 1055,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "northernCatalpa_stage02",
-    "reference_id": 1056
+    "reference_id": 1056,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "northernCatalpa_stage03",
-    "reference_id": 1057
+    "reference_id": 1057,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "northernCatalpa_stage04",
-    "reference_id": 1058
+    "reference_id": 1058,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "oak_stage01",
-    "reference_id": 1059
+    "reference_id": 1059,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "oak_stage02",
-    "reference_id": 1060
+    "reference_id": 1060,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "oak_stage03",
-    "reference_id": 1061
+    "reference_id": 1061,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "oak_stage04",
-    "reference_id": 1062
+    "reference_id": 1062,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "oak_stage05",
-    "reference_id": 1063
+    "reference_id": 1063,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "pinusSylvestris_stage01",
-    "reference_id": 1064
+    "reference_id": 1064,
+    "leaf_type": "needleleaved"
   },
   {
     "name": "pinusSylvestris_stage02",
-    "reference_id": 1065
+    "reference_id": 1065,
+    "leaf_type": "needleleaved"
   },
   {
     "name": "pinusSylvestris_stage03",
-    "reference_id": 1066
+    "reference_id": 1066,
+    "leaf_type": "needleleaved"
   },
   {
     "name": "pinusSylvestris_stage04",
-    "reference_id": 1067
+    "reference_id": 1067,
+    "leaf_type": "needleleaved"
   },
   {
     "name": "pinusSylvestris_stage05",
-    "reference_id": 1068
+    "reference_id": 1068,
+    "leaf_type": "needleleaved"
   },
   {
     "name": "pinusTabuliformis_stage01",
-    "reference_id": 1069
+    "reference_id": 1069,
+    "leaf_type": "needleleaved"
   },
   {
     "name": "pinusTabuliformis_stage02",
-    "reference_id": 1070
+    "reference_id": 1070,
+    "leaf_type": "needleleaved"
   },
   {
     "name": "pinusTabuliformis_stage03",
-    "reference_id": 1071
+    "reference_id": 1071,
+    "leaf_type": "needleleaved"
   },
   {
     "name": "pinusTabuliformis_stage04",
-    "reference_id": 1072
+    "reference_id": 1072,
+    "leaf_type": "needleleaved"
   },
   {
     "name": "pinusTabuliformis_stage05",
-    "reference_id": 1073
+    "reference_id": 1073,
+    "leaf_type": "needleleaved"
   },
   {
     "name": "shagbarkHickory_stage01",
-    "reference_id": 1074
+    "reference_id": 1074,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "shagbarkHickory_stage02",
-    "reference_id": 1075
+    "reference_id": 1075,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "shagbarkHickory_stage03",
-    "reference_id": 1076
+    "reference_id": 1076,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "shagbarkHickory_stage04",
-    "reference_id": 1077
+    "reference_id": 1077,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "tiliaAmurensis_stage01",
-    "reference_id": 1078
+    "reference_id": 1078,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "tiliaAmurensis_stage02",
-    "reference_id": 1079
+    "reference_id": 1079,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "tiliaAmurensis_stage03",
-    "reference_id": 1080
+    "reference_id": 1080,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "tiliaAmurensis_stage04",
-    "reference_id": 1081
+    "reference_id": 1081,
+    "leaf_type": "broadleaved"
   },
   {
     "name": "treesRavaged",

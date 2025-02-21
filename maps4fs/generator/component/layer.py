@@ -44,6 +44,8 @@ class Layer:
         invisible: bool = False,
         procedural: list[str] | None = None,
         border: int | None = None,
+        precise_tags: dict[str, str | list[str] | bool] | None = None,
+        precise_usage: str | None = None,
     ):
         self.name = name
         self.count = count
@@ -58,6 +60,8 @@ class Layer:
         self.invisible = invisible
         self.procedural = procedural
         self.border = border
+        self.precise_tags = precise_tags
+        self.precise_usage = precise_usage
 
     def to_json(self) -> dict[str, str | list[str] | bool]:  # type: ignore
         """Returns dictionary with layer data.
@@ -78,6 +82,8 @@ class Layer:
             "invisible": self.invisible,
             "procedural": self.procedural,
             "border": self.border,
+            "precise_tags": self.precise_tags,
+            "precise_usage": self.precise_usage,
         }
 
         data = {k: v for k, v in data.items() if v is not None}

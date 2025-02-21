@@ -493,6 +493,8 @@ Let's have a closer look at the fields:
 - `invisible` - set it to True for the textures, which should not be drawn in the files, but only to save the data in the JSON file (related to the previous field).
 - `procedural` - is a list of corresponding files, that will be used for a procedural generation. For example: `"procedural": ["PG_meadow", "PG_acres"]` - means that the texture will be used for two procedural generation files: `masks/PG_meadow.png` and `masks/PG_acres.png`. Note, that the one procuderal name can be applied to multiple textures, in this case they will be merged into one mask.
 - `border` - this value defines the border between the texture and the edge of the map. It's used to prevent the texture from being drawn on the edge of the map. The value is in pixels.
+- `precise_tags` - can be used for more specific tags, for example instead of `"natural": "wood"` you can use `"leaf_type": "broadleaved"` to draw only broadleaved trees.
+- `precise_usage` - the same as `usage`, but being used with `precise_tags`.
 
 ## Background terrain
 
@@ -624,6 +626,8 @@ You can also apply some advanced settings to the map generation process.<br>
 - Skip drains - if enabled, the tool will not generate the drains and ditches on the map. By default, it's set to False. Use this if you don't need the drains on the map.
 
 - Use cache - if enabled, the tool will use the cached OSM data for generating the map. It's useful when you're generating the same map multiple times and don't want to download the OSM data each time. But if you've made some changes to the OSM data, you should disable this option to get the updated data. By default, it's set to True. This option has no effect when you're using the custom OSM file.
+
+- Use precise tags - if enabled, the tool will use the precise tags from the texture schema and will ignore basic tags specified for the texture. In the default schema being used for specific types of forests: broadleaved, needleleaved, mixed, and so on. Note, that if it's enabled and the object does not have the precise tag, it will not be drawn on the map. By default, it's set to False.
 
 ### Splines Advanced settings
 

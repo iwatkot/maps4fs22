@@ -55,19 +55,33 @@
     "name": "forestGrass",
     "count": 2,
     "tags": { "natural": ["wood", "tree_row"], "landuse": "forest" },
+    "precise_tags": { "leaf_type": "mixed" },
     "width": 2,
     "color": [11, 66, 0],
     "usage": "forest",
+    "precise_usage": "mixed_forest",
     "priority": 5,
     "procedural": ["PG_forests"]
   },
   {
     "name": "forestLeaves",
-    "count": 2
+    "count": 2,
+    "precise_tags": { "leaf_type": "broadleaved" },
+    "color": [11, 66, 0],
+    "priority": 5,
+    "usage": "forest",
+    "precise_usage": "broadleaved_forest",
+    "procedural": ["PG_forests"]
   },
   {
     "name": "forestNeedels",
-    "count": 2
+    "count": 2,
+    "precise_tags": { "leaf_type": "needleleaved" },
+    "color": [11, 66, 0],
+    "priority": 5,
+    "usage": "forest",
+    "precise_usage": "needleleaved_forest",
+    "procedural": ["PG_forests"]
   },
   {
     "name": "forestRockRoots",

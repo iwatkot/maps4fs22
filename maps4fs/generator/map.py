@@ -307,6 +307,25 @@ class Map:
             return texture_component.get_layer_by_usage(by_usage)
         return None
 
+    def get_texture_layers(
+        self,
+        by_usage: str | None = None,
+    ) -> None | list[Layer]:
+        """Get texture layers by usage.
+
+        Arguments:
+            by_usage (str, optional): Texture usage.
+
+        Returns:
+            None | list[Layer]: List of texture layers.
+        """
+        texture_component = self.get_texture_component()
+        if not texture_component:
+            return None
+        if by_usage:
+            return texture_component.get_layers_by_usage(by_usage)
+        return None
+
     def previews(self) -> list[str]:
         """Get list of preview images.
 
