@@ -29,7 +29,7 @@ def get_queue(force: bool = False) -> dict[int, str]:
         queue = json.load(f)
 
     for epoch, session in queue.items():
-        if int(epoch) + QUEUE_TIMEOUT * 2 < int(time()):
+        if int(epoch) + int(QUEUE_TIMEOUT * 1.5) < int(time()):
             remove_from_queue(session, queue)
 
     return queue
